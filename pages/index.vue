@@ -9,8 +9,14 @@
       <div v-for="country in filteredCountries" :key="country.cca3" class="col-12 mb-4">
         <div class="card custom-card">
           <div class="card-body d-flex">
-            <div class="flex-fill d-flex justify-content-center align-items-center">
-              <img :src="country.flags.png" :alt="country.name.common" class="w-100" />
+            <div class="flag-wrapper flex-fill d-flex justify-content-center align-items-center">
+              <div class="flag-container">
+                <img 
+                  :src="country.flags.png" 
+                  :alt="country.name.common" 
+                  class="country-flag"
+                />
+              </div>
             </div>
             <div class="col-7 d-flex flex-column">
               <div style="margin-left: 10px;">
@@ -100,5 +106,57 @@ const showMap = (mapUrl) => {
 </script>
 
 <style scoped>
-/* Add any additional styles here if needed */
+.flag-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag-container {
+  width: 227px;
+  height: 144px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.country-flag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .card-body {
+    flex-direction: column;
+  }
+
+  .flag-container {
+    width: 100%;
+    max-width: 227px;
+    height: 144px;
+    margin: 0 auto;
+  }
+
+  .col-7 {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .mt-auto {
+    margin-top: 1rem !important;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .flag-container {
+    height: 120px;
+  }
+}
 </style>
