@@ -18,9 +18,9 @@
                 <p class="card-text mb-1"><strong>Currency:</strong> {{ country.currencies ? Object.values(country.currencies)[0].name : 'N/A' }} ({{ country.currencies ? Object.values(country.currencies)[0].symbol : 'N/A' }})</p>
                 <p class="card-text"><strong>Current date and time:</strong> <span>{{ formatDateTime(country.timezones) }}</span></p>
               </div>
-              <div class="mt-auto">
-                <button class="btn btn-primary btn-sm mr-2" @click="showMap(country.maps.googleMaps)"><strong>Show Map</strong></button>
-                <nuxt-link :to="`/country/${country.cca3}`" class="btn btn-secondary btn-sm"><strong>Details</strong></nuxt-link>
+              <div class="d-flex align-items-center mt-auto">
+                <button class="btn btn-primary btn-sm mr-2" @click="showMap(country.maps.googleMaps)" style="font-size: 20px;"><strong>Show Map</strong></button>
+                <nuxt-link :to="`/country/${country.cca3}`" class="btn btn-secondary btn-sm" style="line-height: 1.5; font-size: 20px;"><strong>Detail</strong></nuxt-link>
               </div>
             </div>
           </div>

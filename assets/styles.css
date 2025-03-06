@@ -46,16 +46,18 @@ body {
 }
 
 .col-7 {
-    padding: 0; /* Removed padding for .col-7 */
+    padding: 0;
+    flex: 0 0 auto;
+    width: 60%;
 }
 
 .btn-primary.btn-sm, .btn-secondary.btn-sm {
     background: white;
-    border: 3px solid blue; /* Updated border width */
+    border: 3px solid blue;
     color: blue;
-    height: 2.7rem; /* Updated height */
-    width: 8.7rem; /* Updated width */
-    font-size: 17px; /* Set font size for buttons */
+    height: 3rem;
+    width: 9.5rem;
+    font-size: 17px;
 }
 
 .btn-secondary.btn-sm {
