@@ -3,19 +3,19 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 620px; /* Updated container size */
     margin: auto;
 }
 
 .search-bar {
     border-radius: 0px;
-    width: 100%;
+    width: 100%; /* Adjusted to fit the container */
     padding-right: 40px;
 }
 
 .search-icon {
     position: absolute;
-    right: 10px;
+    right: 10px; /* Adjusted position */
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2rem;
@@ -23,7 +23,7 @@ body {
 }
 
 .custom-card {
-    width: 100%;
+    width: 100%; /* Adjusted to fit the container */
     margin: 0 auto;
 }
 
@@ -36,38 +36,146 @@ body {
     flex: 1;
     display: flex;
     padding: 13px;
+    padding-bottom: 20px; /* Added padding under time */
 }
 
 .card img {
-    max-height: 8rem;
+    max-height: 9rem; /* Updated max-height */
+    width: 100%; /* Ensures all flags have the same width */
     object-fit: contain;
+}
+
+.col-7 {
+    padding: 0; /* Removed padding for .col-7 */
 }
 
 .btn-primary.btn-sm, .btn-secondary.btn-sm {
     background: white;
-    border: 2px solid blue;
+    border: 3px solid blue; /* Updated border width */
     color: blue;
-    height: 2.5rem;
-    width: 6.7rem;
+    height: 2.7rem; /* Updated height */
+    width: 8.7rem; /* Updated width */
+    font-size: 17px; /* Set font size for buttons */
 }
 
 .btn-secondary.btn-sm {
-    margin-left: 1rem;
+    margin-left: 1.4rem; /* Updated margin for secondary button */
 }
 
 .mt-auto {
     margin-left: 10px;
 }
 
+.date-time-text {
+    margin-bottom: 5px; /* Set bottom margin for date and time text */
+}
+.card-text{
+    margin-bottom: 5px;
+}
+.card-text:last-child {
+    margin-bottom: 5px !important;
+}
+
 .country-info p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px; /* Consistent margin for country info */
 }
 
-.card {
-    transition: transform 0.2s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.position-relative {
+    position: relative; /* For positioning the country name over the flag */
 }
 
-.card:hover {
-    transform: translateY(-5px);
+#country-name {
+    position: absolute;
+    top: 13px; /* Adjusted to move it down */
+    left: 4.5rem; /* Keep it the same or adjust as needed */
+    color: rgb(0, 0, 0); /* Change to white for better visibility */
+    padding: 5px; /* Add some padding for better readability */
+    border-radius: 5px; /* Optional: rounded corners */
+
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1200px) {
+    .detail-container {
+        width: 95% !important; /* Adjust container width for medium screens */
+        left: 0 !important; /* Center the container */
+    }
+
+    #country-name {
+        left: 0 !important; /* Center the country name */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detail-container {
+        width: 90% !important; /* Adjust container width for smaller screens */
+        left: 0 !important; /* Center the container */
+    }
+
+    .d-flex.mb-5 {
+        flex-direction: column !important; /* Stack elements vertically */
+    }
+
+    #country-flag {
+        max-height: 300px; /* Adjust max height for tablets */
+        box-shadow: none; /* Remove shadow for mobile */
+        border: none; /* Ensure no border is applied */
+    }
+
+    .country-info {
+        right: 0 !important; /* Adjust position */
+        margin-top: 1rem !important; /* Add margin for spacing */
+    }
+
+    #neighboring-countries {
+        margin: 20px !important; /* Adjust margins */
+        padding: 20px !important; /* Adjust padding */
+    }
+
+    #border-countries .col-md-4 {
+        width: 100% !important; /* Make flags full width */
+        margin-bottom: 1rem; /* Add spacing between flags */
+    }
+
+    .btn-primary.btn-sm, .btn-secondary.btn-sm {
+        width: 100%; /* Make buttons full width on mobile */
+        margin: 0.5rem 0; /* Add vertical spacing between buttons */
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .detail-container {
+        width: 95% !important; /* Adjust container width for mobile */
+        left: 0 !important; /* Center the container */
+    }
+
+    #country-flag {
+        max-height: 250px; /* Adjust max height for mobile */
+        box-shadow: none; /* Remove shadow for mobile */
+        border: none; /* Ensure no border is applied */
+    }
+
+    .country-info {
+        padding: 0 1rem !important; /* Add padding for mobile */
+    }
+
+    #neighboring-countries {
+        margin: 10px !important; /* Adjust margins */
+        padding: 10px !important; /* Adjust padding */
+    }
+
+    #border-countries .col-md-4 {
+        width: 100% !important; /* Make flags full width */
+    }
+
+    .col-md-4 {
+        padding: 0 !important; /* Remove padding for mobile */
+    }
+
+    .btn-primary.btn-sm, .btn-secondary.btn-sm {
+        width: 100%; /* Ensure buttons are full width on smaller screens */
+        margin: 0.5rem 0; /* Maintain vertical spacing */
+        font-size: 15px; /* Further adjust font size for smaller screens */
+    }
 }
