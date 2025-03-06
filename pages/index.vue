@@ -2,7 +2,7 @@
   <div class="container mt-5">
     <h1 class="mb-2">Countries</h1>
     <div class="d-flex justify-content-center mb-4 position-relative">
-      <input id="search-bar" v-model="searchQuery" type="text" class="form-control search-bar" placeholder="Search countries" />
+      <input id="search-bar" v-model="searchQuery" type="text" class="form-control search-bar" placeholder="Search countries" style="height: 60px;" />
       <i class="fas fa-search search-icon"></i>
     </div>
     <div id="country-list" class="row justify-content-center">
